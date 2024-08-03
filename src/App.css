@@ -1,0 +1,130 @@
+
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
+}
+
+
+.logo img{
+    width: 120px;
+    height: 90px;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+ul{
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    padding-right: 10px;
+    font-weight: 500;
+    padding-bottom: 15px;
+}
+ul :hover{
+    color: cadetblue;
+}
+.content-section {
+    width: 700px;
+    margin-left: 150px;
+}
+.content-section p{
+    font-weight: 500;
+    font-size: larger;
+}
+
+.section{
+    margin-left: 120px;
+}
+.formBtn{
+    padding: 18px 10px;
+    background-color: black;
+    color: white;
+    width: 200px;
+    height: 50px;
+    border: none;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    
+    
+
+}
+
+.topbtn{
+    display: flex;
+    gap: 30px;
+    margin-top: 50px;
+}
+.emailbtn{
+    padding: 18px 10px;
+    background-color: black;
+    color: white;
+    width: 200px;
+    height: 50px;
+    border: none;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.section{
+    max-width: 1430px;
+   
+    
+}
+.input-form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 30px;
+    position: relative;
+    border-radius: 10px;
+    
+}
+.input-form input{
+    height: 35px;
+    width: 420px;
+}
+.input-form label{
+    position: absolute;
+    top: -11px;
+    background-color: white;
+    margin-left: 7px;
+    padding: 4px;
+    font-size: 14px;
+}
+.input-form-text{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 30px;
+    position: relative;
+}
+.input-form-text input{
+    height: 90px;
+    width: 420px;
+}
+.input-form-text label{
+    position: absolute;
+    top: -11px;
+    background-color: white;
+    margin-left: 7px;
+    padding: 4px;
+    font-size: 14px;
+}
+form{
+    position: relative;
+}
+.image-section{
+    position: absolute;
+    top: 140px;
+    right: 80px;
+}
