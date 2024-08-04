@@ -6,24 +6,43 @@ import { MdDarkMode, MdOutlineLightMode } from "react-icons/md";
 const ContactForm = () => {
 
   const [mode, setMode] = useState(false)
-  const [send, setSend] = useState(false)
   const [data, setData] = useState({ name: '', email: '' })
+  const [error, setError] = useState({});
 
 
 
   const handleMode = () => {
     setMode((prevState) => !prevState)
   }
-  const handleSend = () => {
-    setSend(true)
+  const handleSend = () => { 
+    let validations = validating()
+    if (Object.keys(validations).length === 0) {
+      console.log("form set");      
+    }else{
+      setError(validations)
+    }  
   }
+
+const validating = ()=>{
+  const error = {}
+  if(!data.name){
+    error.name = "* Name is required"
+  } if (!data.email) {
+    error.email = 'Email is required';
+  } else if (!/\S+@\S+\.\S+/.test(data.email)){
+    error.email = 'Invalid Email';
+  }
+  return error
+}
+
+
+
 
   const handleChange = (e) => {
     const { name, value } = e.target
     setData({ ...data, [name]: value })
   }
 
-console.log(data);
 
   return (
     <div className="background">
@@ -50,11 +69,13 @@ console.log(data);
             <div className="screen-body-item">
               <div className="app-form">
                 <div className="app-form-group">
-                  <input onChange={(e) => handleChange(e)} className="app-form-control" placeholder="NAME" />
+                  <input onChange={handleChange} name='name' className="app-form-control" placeholder="NAME" />
                 </div>
+                {error.name?error.name:""}
                 <div className="app-form-group">
-                  <input onChange={(e) => handleChange(e)} className="app-form-control" placeholder="EMAIL" />
+                  <input onChange={handleChange} name='email' className="app-form-control" placeholder="EMAIL" />
                 </div>
+                {error.email?error.email:""}
                 <div className="app-form-group message">
                   <input className="app-form-control" placeholder="MESSAGE" />
                 </div>
@@ -67,7 +88,6 @@ console.log(data);
           </div>
         </div>
         <div>
-          {send ? (<p>Please fill it</p>) : ''}
         </div>
       </div>
     </div>
