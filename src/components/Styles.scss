@@ -14,6 +14,8 @@ $font-primary: 'Montserrat', sans-serif;
 $font-secondary: 'Roboto Condensed', sans-serif;
 
 
+
+
 *,
 *:before,
 *:after {
@@ -161,18 +163,18 @@ body {
     padding: 10px 0;
     background: none;
     border: none;
-    border-bottom: 1px solid #666;
-    color: #ddd;
     font-size: 14px;
+    color: white;
     outline: none;
-    transition: border-color .2s;
-
-    &::placeholder {
-        color: $placeholder-color;
-    }
-
-    &:focus {
-        border-bottom-color: $focus-border-color;
+    transition: border-color 0.2s;
+  
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+      -webkit-box-shadow: 0 0 0 1000px rgb(252, 249, 249) inset !important;
+      box-shadow: 0 0 0 1000px $screen-background inset !important;
+      -webkit-text-fill-color: white !important;
     }
 }
 
@@ -289,23 +291,33 @@ body {
 }
 
 
-.mode-white{
-   font-size: large;
-   color: white;
+.mode-white {
+    font-size: large;
+    color: white;
 }
-.mode-dark{
+
+.mode-dark {
     font-size: large;
     color: black;
 }
 
 
-
-
-
-
-
-
-
-
-
-
+.app-form-control-dark{
+    width: 100%;
+    padding: 10px 0;
+    background: none;
+    border: none;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+  
+  
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+      -webkit-box-shadow: 0 0 0 1000px black inset !important;
+      box-shadow: 0 0 0 1000px #fff inset !important;
+      -webkit-text-fill-color: black !important;
+    }
+}

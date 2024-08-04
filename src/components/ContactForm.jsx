@@ -69,15 +69,15 @@ const validating = ()=>{
             <div className="screen-body-item">
               <div className="app-form">
                 <div className="app-form-group">
-                  <input onChange={handleChange} name='name' className="app-form-control" placeholder="NAME" />
+                  <input onChange={handleChange} name='name' className={mode?"app-form-control":"app-form-control-dark"} placeholder="NAME" />
                 </div>
                 {error.name?error.name:""}
                 <div className="app-form-group">
-                  <input onChange={handleChange} name='email' className="app-form-control" placeholder="EMAIL" />
+                  <input onChange={handleChange} name='email' className={mode?"app-form-control":"app-form-control-dark"} placeholder="EMAIL" />
                 </div>
                 {error.email?error.email:""}
                 <div className="app-form-group message">
-                  <input className="app-form-control" placeholder="MESSAGE" />
+                  <input className={mode?"app-form-control":"app-form-control-dark"} placeholder="MESSAGE" />
                 </div>
                 <div className="app-form-group buttons">
                   <button className="app-form-button">CANCEL</button>
