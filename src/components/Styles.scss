@@ -223,7 +223,35 @@ body {
         padding: 0;
     }
 }
-
+.modal-cont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 8px;
+    padding: 16px;
+    width: 350px;
+    margin: 30px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  
+    > div {
+      display: flex;
+      align-items: center;
+      margin-right: 12px;
+    }
+  
+    svg {
+      color: #4caf50;
+      font-size: 24px;
+    }
+  
+    p {
+      margin: 0;
+      color: #fff;
+      font-size: 16px;
+    }
+  }
+  
 
 
 

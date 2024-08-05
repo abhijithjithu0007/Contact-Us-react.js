@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Styles.scss';
 import { MdDarkMode, MdOutlineLightMode } from "react-icons/md";
+import { FaCheckCircle } from "react-icons/fa";
 
 
 const ContactForm = () => {
@@ -8,32 +9,35 @@ const ContactForm = () => {
   const [mode, setMode] = useState(false)
   const [data, setData] = useState({ name: '', email: '' })
   const [error, setError] = useState({});
+  const [modal, setModal] = useState('')
 
+
+  console.log(modal);
 
 
   const handleMode = () => {
     setMode((prevState) => !prevState)
   }
-  const handleSend = () => { 
+  const handleSend = () => {
     let validations = validating()
     if (Object.keys(validations).length === 0) {
-      console.log("form set");      
-    }else{
+      setModal('Your meassage has been send successfully')
+    } else {
       setError(validations)
-    }  
+    }
   }
 
-const validating = ()=>{
-  const error = {}
-  if(!data.name){
-    error.name = "* Name is required"
-  } if (!data.email) {
-    error.email = 'Email is required';
-  } else if (!/\S+@\S+\.\S+/.test(data.email)){
-    error.email = 'Invalid Email';
+  const validating = () => {
+    const error = {}
+    if (!data.name) {
+      error.name = "* Name is required"
+    } if (!data.email) {
+      error.email = 'Email is required';
+    } else if (!/\S+@\S+\.\S+/.test(data.email)) {
+      error.email = 'Invalid Email';
+    }
+    return error
   }
-  return error
-}
 
 
 
@@ -69,15 +73,15 @@ const validating = ()=>{
             <div className="screen-body-item">
               <div className="app-form">
                 <div className="app-form-group">
-                  <input onChange={handleChange} name='name' className={mode?"app-form-control":"app-form-control-dark"} placeholder="NAME" />
+                  <input onChange={handleChange} name='name' className={mode ? "app-form-control" : "app-form-control-dark"} placeholder="NAME" />
                 </div>
-                {error.name?error.name:""}
+                {error.name ? error.name : ""}
                 <div className="app-form-group">
-                  <input onChange={handleChange} name='email' className={mode?"app-form-control":"app-form-control-dark"} placeholder="EMAIL" />
+                  <input onChange={handleChange} name='email' className={mode ? "app-form-control" : "app-form-control-dark"} placeholder="EMAIL" />
                 </div>
-                {error.email?error.email:""}
+                {error.email ? error.email : ""}
                 <div className="app-form-group message">
-                  <input className={mode?"app-form-control":"app-form-control-dark"} placeholder="MESSAGE" />
+                  <input className={mode ? "app-form-control" : "app-form-control-dark"} placeholder="MESSAGE" />
                 </div>
                 <div className="app-form-group buttons">
                   <button className="app-form-button">CANCEL</button>
@@ -87,6 +91,15 @@ const validating = ()=>{
             </div>
           </div>
         </div>
+        {modal?<div className='modal-cont'>
+          <div>
+            <FaCheckCircle />
+          </div>
+          <p>
+            {modal}
+          </p>
+        </div>:""}
+        
         <div>
         </div>
       </div>
