@@ -91,7 +91,7 @@ const ContactForm = () => {
             </div>
           </div>
         </div>
-        {modal?<div className='modal-cont'>
+        {modal?<div className='modal-cont '>
           <div>
             <FaCheckCircle />
           </div>
