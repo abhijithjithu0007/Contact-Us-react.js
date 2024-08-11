@@ -32,9 +32,9 @@ const ContactForm = () => {
     if (!data.name) {
       error.name = "* Name is required"
     } if (!data.email) {
-      error.email = 'Email is required';
+      error.email = '* Email is required';
     } else if (!/\S+@\S+\.\S+/.test(data.email)) {
-      error.email = 'Invalid Email';
+      error.email = '* Invalid Email';
     }
     return error
   }
